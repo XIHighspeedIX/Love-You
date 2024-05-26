@@ -7,11 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Kate and Sander</h1>
-        <p>Kate, I love you with all my heart. You mean the world to me.</p>
+    <div id="auth">
+        <input type="password" id="password" placeholder="Enter the password">
+        <button onclick="checkPassword()">Enter</button>
     </div>
-    <div id="hearts"></div>
+    <div id="content" style="display: none;">
+        <div class="container">
+            <h1>Kate and Sander</h1>
+            <p>Kate, I love you with all my heart. You mean the world to me.</p>
+        </div>
+        <div id="hearts"></div>
+    </div>
     <script src="script.js"></script>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'your-secret-password') {
+                document.getElementById('auth').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Incorrect password, try again.');
+            }
+        }
+    </script>
 </body>
 </html>
